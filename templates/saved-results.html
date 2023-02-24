@@ -1,0 +1,32 @@
+    <h1>Your search for {{ tables[0]['originCode']}} to {{ tables[0]['destinationCode'] }}</h1>
+        <center><h4 class="title-name"></h4></center>
+        <h3><a href="/"> Home </a> </h3>
+        <table class="table table-striped", style="width: 50%" id="table11" border="1">
+            <thead>
+                 <tr class="bg-info">
+                     <th>Result ID</th>
+                     <th>Origin</th>
+                     <th>Destination</th>
+                     <th>layovers</th>
+                     <th>Dep Date</th>
+                     <th>Passengers</th>
+                     <th>Price</th>
+                     <th>Currency</th>
+                 </tr>
+             </thead>
+             <tbody id="mysearch">
+                {% for res in tables %}
+                <tr>
+                    <td>{{res.result_id}}</td>
+                    <td>{{res.originCode}}</td>
+                    <td>{{res.destinationCode}}</td>
+                    <td>{{res.layovers}}</td>
+                    <td>{{res.departuredate}}</td>
+                    <td>{{res.passengers}}</td>
+                    <td>{{res.price}}</td>
+                    <td>{{res.currency}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table> 
+            </tbody>

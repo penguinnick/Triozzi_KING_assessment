@@ -1,0 +1,32 @@
+<html>
+    <body>
+        <h1> Recent Searches </h1>
+        <ul>
+            <h3><a href="/"> Home </a> </h3>
+            <br>
+            <form action="/clear"><input type="submit" value="CLEAR"></form>
+            <br>
+        <table class="table table-striped", id='13D'>
+            <thead>
+                 <tr class="bg-info">
+                     <th>searchID</th>
+                     <th>Origin</th>
+                     <th>Destination</th>
+                     <th>Dep Date</th>
+                     <th>Search Date</th>
+                 </tr>
+             </thead>
+             <tbody id="mysearch">
+                {%for search in allsearches%}
+                <tr>
+                    <td><a href="/savedflights/{{ search.id }}">{{search.id}}</a></td>
+                    <td>{{search.origin}}</td>
+                    <td>{{search.destination}}</td>
+                    <td>{{search.departuredate}}</td>
+                    <td>{{search.search_date}}</td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table> 
+    </body>
+</html>

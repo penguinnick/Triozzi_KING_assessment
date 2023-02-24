@@ -1,0 +1,9 @@
+flask==2.1.0
+requests
+psycopg2-binary
+python-dotenv
+amadeus
+sqlalchemy
+flask_sqlalchemy
+pandas
+json2html

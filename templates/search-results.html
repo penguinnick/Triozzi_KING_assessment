@@ -1,0 +1,55 @@
+<html>
+    <body>
+    <h1> Search Results </h1>
+    <ul>
+        <li><a href="/savedflights"> Browse Saved Searches</a></li>
+        <h3><a href="/"> Home </a> </h3>
+    </ul>
+    <br>
+    <ul>
+          <br>
+          <div name="resulttable"> 
+            {% for table in tables %}
+            {{ table|safe }}
+            {% endfor %}
+            
+          </div>
+          <br>
+          <div name="jsonoutput"> 
+            {% for out in output %}
+            {{ out }}
+            {% endfor %}
+          </div>
+    </ul>
+    <table class="table table-striped", id='res'>
+      <thead>
+           <tr class="bg-info">
+               <th>searchID</th>
+               <th>Result ID</th>
+               <th>Origin</th>
+               <th>Destination</th>
+               <th>Layovers</th>
+               <th>Departure Date</th>
+               <th>Price</th>
+               <th>Currency</th>
+               <th>Passengers</th>
+           </tr>
+       </thead>
+       <tbody id="mysearch">
+          {% for table in tables2 %}
+          <tr>
+              <td>{{ table.search_id }}</td>
+              <td>{{ table.result_id }}</td>
+              <td>{{ table.originCode }}</td>
+              <td>{{ table.destinationCode }}</td>
+              <td>{{ table.layovers }}</td>
+              <td>{{ table.departuredate }}</td>
+              <td>{{ table.price }}</td>
+              <td>{{ table.currency }}</td>
+              <td>{{ table.passengers}}</td>
+          </tr>
+          {%endfor%}
+  </ul>
+    </body>
+</html>
+

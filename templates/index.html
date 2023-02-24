@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Flight Finder</h1>
+        <ul>
+            <li><a href="/savedflights"> Browse Saved Searches</a></li>
+        </ul>
+
+        <br>
+
+<h3> Search Flights </h3>
+<form action="/search/flights" method="POST">
+    <div id="originCode">
+        Origin: <input type="text" name="from" value="" required>
+        Must enter 3-Letter iata code 
+    </div>
+    <br>
+    <div id="destinationCode">
+        Destination: <input type="text" name="destination" value="" required>
+        Must enter 3-Letter iata code 
+    </div>
+    <br>
+    <div id="passengerCount">
+        Number of Passengers: <input type="integer" name="passengers" value="" required>
+    </div>
+    <!-- Departure Date -->
+    <div id="departureDate">
+        <label for=""><h3>Departure Date:</h3></label>
+        <input type="date" class="form-control" name="date" value="" required/>
+        <br/>
+    </div>
+    <br>
+    <div>
+        <input type="radio" id="EUR" name="currency_choice" value="EUR" required>
+        <label for="EUR">EUR</label><br>
+        <input type="radio" id="USD" name="currency_choice" value="USD" required>
+        <label for="USD">USD</label><br>
+        <input type="radio" id="HRK" name="currency_choice" value="HRK" required>
+        <label for="HRK">HRK</label><br>
+    </div>
+    <br>
+    <div>
+        <input type="submit" value="SEARCH FLIGHTS">
+    </div>
+    <br>
+</form>
+    <h3> </h3>
+    <div id="flightData"></div>
+    <div id="origin"></div>
+
+    </body>
+</html>
